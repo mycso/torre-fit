@@ -103,7 +103,7 @@ export default function Home() {
   const headline = genome?.person?.professionalHeadline ?? '';
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+    <div className="grid gap-6 grid-cols-1">
       <div className="space-y-6">
         <Card>
           <CardContent className="space-y-4">

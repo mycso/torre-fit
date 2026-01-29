@@ -29,13 +29,12 @@ export function JobSearchForm({
                     placeholder="e.g. Frontend, React, Product Designer"
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
-                    disabled={disabled}
                 />
             </label>
 
             <Button
                 type="submit"
-                disabled={disabled || isLoading || !keyword.trim()}
+                disabled={isLoading || !keyword.trim()}
                 className="sm:w-40"
             >
                 {isLoading ? 'Searching…' : 'Search jobs'}

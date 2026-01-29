@@ -3,11 +3,12 @@ import { err, ok } from '@/lib/http'
 
 export async function GET(
     _req: Request,
-    { params }: { params: { username: string } }
-
+    ctx: { params: Promise<{ username: string }> }
 ) {
-    const username = await params?.username?.trim();
-    if (!username) {
+    const { username } = await ctx.params;
+    const clean = username?.trim();
+
+    if (!clean) {
         return NextResponse.json(err('Username is required'), { status: 400 });
     }
 
